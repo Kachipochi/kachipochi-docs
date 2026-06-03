@@ -1,4 +1,5 @@
 # SmartCollections — Documentation
+![logo](images/SmartCollectionsLogo.png)  
 
 **Publisher:** Kachipochi  
 **Supported Engine Versions:** Unreal Engine 5.5, 5.6, 5.7  
@@ -32,6 +33,7 @@ Key features:
 
 1. Copy the `SmartCollections` folder into your project's `Plugins/` directory,
    or into the engine's `Plugins/Marketplace/` directory for a global install.
+   (If you installed it directly via Fab, you do not need to follow these steps.)
 2. Open your project in the Unreal Editor.
 3. Go to **Edit → Plugins**, search for **SmartCollections**, and enable it.
 4. Restart the editor when prompted.
@@ -40,19 +42,26 @@ Key features:
 
 ## Usage
 
+![OpenMenu](images/OpenMenu.png)  
+
 ### Opening the SmartCollections Panel
 
 After enabling the plugin, open the panel via:
 
-**Window → SmartCollections**
+**Tools → Kachipochi → SmartCollections**
 
 The panel appears as a dockable tab inside the editor.
+
+![NewCollection](images/NewCollection.png)
+![NewCollection](images/NewCollection_2.png)  
 
 ### Creating a Collection
 
 1. Click the **+** button in the SmartCollections panel.
 2. Enter a name for the new collection.
 3. A `.smc` file is created in your project's content folder.
+
+![alt text](images/AddSmartCollection.png)  
 
 ### Adding Assets to a Collection
 
