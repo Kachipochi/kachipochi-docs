@@ -38,16 +38,20 @@
       var lang = localStorage.getItem('lang') || 'en';
       var isJa = lang === 'ja';
 
+      // Derive the directory where index.html lives.
+      // e.g. '/kachipochi-docs/' on GitHub Pages, '/' locally.
+      var basedir = window.location.pathname.replace(/\/[^\/]*$/, '/');
+
       window.$docsify = {
         name: 'Kachipochi Tool Document',
         repo: 'intack2/kachipochi-docs',
         loadSidebar: true,
         subMaxLevel: 3,
-        relativePath: false,
-        basePath: isJa ? '/ja' : '/',
-        alias: isJa
-          ? { '/ja/.*/_sidebar.md': '/ja/_sidebar.md' }
-          : { '/.*/_sidebar.md': '/_sidebar.md' },
+        relativePath: true,
+        basePath: isJa ? basedir + 'ja' : basedir,
+        alias: {
+          '/.*/_sidebar.md': '/_sidebar.md',
+        },
         plugins: [
           function (hook) {
             hook.ready(function () {
@@ -60,7 +64,7 @@
               btn.addEventListener('click', function () {
                 var next = (localStorage.getItem('lang') || 'en') === 'en' ? 'ja' : 'en';
                 localStorage.setItem('lang', next);
-                window.location.replace('/');
+                window.location.replace(window.location.pathname);
               });
               document.body.appendChild(btn);
             });
