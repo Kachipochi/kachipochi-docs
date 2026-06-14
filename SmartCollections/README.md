@@ -94,6 +94,31 @@ Refer to `Content/Python/smart_collections_examples.py` for full examples.
 
 ---
 
+## Support for synchronizing standard Collections with Smart Collections
+
+This synchronization feature is designed for migrating from existing standard collections, or for environments where standard collections and Smart Collections need to coexist for any reason.
+
+### Usage
+
+#### Opening the Collections Sync Panel
+open the panel via:
+**Tools → Kachipochi → Collections Sync**  
+
+![Collection Sync Menu Image](images/CollectionSyncMenu.png)
+
+#### Execute Pull or Push
+
+![CollectionSyncWindow](images/CollectionSyncWindow.png)
+
+**Pull (UE Collections → Smart Collections)**  
+Imports UE's built-in Collections into Smart Collections. If a same-named Smart Collection exists, its assets are appended; otherwise a new one is created. The UE parent/child hierarchy is recreated too, but a parent already set on an existing Smart Collection is never overwritten. Because it only appends, existing entries are never lost, and re-running skips anything unchanged as "already up to date" — so it's safe to run repeatedly.
+
+**Push (Smart Collections → UE Collections)**  
+The reverse: exports Smart Collections into UE's built-in Collections. Same-named collections get the new assets added; missing ones are created. The Smart Collections hierarchy is recreated on the UE side as well. Note that folders are skipped, since UE Collections don't support them (the skipped count is shown). This direction is also additive and idempotent.
+Either way, the dialog reports what happened (created / updated / skipped counts).
+
+---
+
 ## Support
 
 For questions or bug reports, please contact:  
