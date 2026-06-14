@@ -1,5 +1,5 @@
 # SmartCollections — Documentation
-![logo](images/SmartCollectionsLogo.png)  
+![logo](/SmartCollections/images/SmartCollectionsLogo.png)  
 
 **Publisher:** Kachipochi  
 **Supported Engine Versions:** Unreal Engine 5.5, 5.6, 5.7  
@@ -42,7 +42,7 @@ Key features:
 
 ## Usage
 
-![OpenMenu](images/OpenMenu.png)  
+![OpenMenu](/SmartCollections/images/OpenMenu.png)  
 
 ### Opening the SmartCollections Panel
 
@@ -52,8 +52,8 @@ After enabling the plugin, open the panel via:
 
 The panel appears as a dockable tab inside the editor.
 
-![NewCollection](images/NewCollection.png)
-![NewCollection](images/NewCollection_2.png)  
+![NewCollection](/SmartCollections/images/NewCollection.png)
+![NewCollection](/SmartCollections/images/NewCollection_2.png)  
 
 ### Creating a Collection
 
@@ -61,7 +61,7 @@ The panel appears as a dockable tab inside the editor.
 2. Enter a name for the new collection.
 3. A `.smc` file is created in your project's content folder.
 
-![alt text](images/AddSmartCollection.png)  
+![alt text](/SmartCollections/images/AddSmartCollection.png)  
 
 ### Adding Assets to a Collection
 
@@ -104,11 +104,11 @@ This synchronization feature is designed for migrating from existing standard co
 open the panel via:
 **Tools → Kachipochi → Collections Sync**  
 
-![Collection Sync Menu Image](images/CollectionSyncMenu.png)
+![Collection Sync Menu Image](/SmartCollections/images/CollectionSyncMenu.png)
 
 #### Execute Pull or Push
 
-![CollectionSyncWindow](images/CollectionSyncWindow.png)
+![CollectionSyncWindow](/SmartCollections/images/CollectionSyncWindow.png)
 
 **Pull (UE Collections → Smart Collections)**  
 Imports UE's built-in Collections into Smart Collections. If a same-named Smart Collection exists, its assets are appended; otherwise a new one is created. The UE parent/child hierarchy is recreated too, but a parent already set on an existing Smart Collection is never overwritten. Because it only appends, existing entries are never lost, and re-running skips anything unchanged as "already up to date" — so it's safe to run repeatedly.
