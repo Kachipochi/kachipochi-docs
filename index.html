@@ -6,21 +6,68 @@
   <title>Kachipochi Tool Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    #lang-switcher {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 9999;
+      background: #42b983;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      line-height: 1.5;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+      transition: background 0.2s;
+    }
+
+    #lang-switcher:hover {
+      background: #33a06f;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script>
-    window.$docsify = {
-      name: 'Kachipochi Tool Document',
-      repo: 'intack2/kachipochi-docs',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      relativePath: true,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-      },
-    }
+    (function () {
+      var lang = localStorage.getItem('lang') || 'en';
+      var isJa = lang === 'ja';
+
+      window.$docsify = {
+        name: 'Kachipochi Tool Document',
+        repo: 'intack2/kachipochi-docs',
+        loadSidebar: true,
+        subMaxLevel: 3,
+        relativePath: false,
+        basePath: isJa ? '/ja' : '/',
+        alias: isJa
+          ? { '/ja/.*/_sidebar.md': '/ja/_sidebar.md' }
+          : { '/.*/_sidebar.md': '/_sidebar.md' },
+        plugins: [
+          function (hook) {
+            hook.ready(function () {
+              if (document.getElementById('lang-switcher')) return;
+              var current = localStorage.getItem('lang') || 'en';
+              var btn = document.createElement('button');
+              btn.id = 'lang-switcher';
+              btn.textContent = current === 'ja' ? 'EN' : '日本語';
+              btn.title = current === 'ja' ? 'Switch to English' : '日本語に切り替え';
+              btn.addEventListener('click', function () {
+                var next = (localStorage.getItem('lang') || 'en') === 'en' ? 'ja' : 'en';
+                localStorage.setItem('lang', next);
+                window.location.replace('/');
+              });
+              document.body.appendChild(btn);
+            });
+          }
+        ]
+      };
+    })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
