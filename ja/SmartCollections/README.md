@@ -1,5 +1,5 @@
 # SmartCollections — ドキュメント
-![logo](images/SmartCollectionsLogo.png)
+![logo](../../en/SmartCollections/images/SmartCollectionsLogo.png)
 
 **パブリッシャー:** Kachipochi  
 **対応エンジンバージョン:** Unreal Engine 5.5、5.6、5.7  
@@ -39,7 +39,7 @@ SmartCollections は、コンテンツブラウザにスマートなファイル
 
 ## 使い方
 
-![OpenMenu](images/OpenMenu.png)
+![OpenMenu](../../en/SmartCollections/images/OpenMenu.png)
 
 ### SmartCollections パネルを開く
 
@@ -49,8 +49,8 @@ SmartCollections は、コンテンツブラウザにスマートなファイル
 
 パネルはエディター内のドッキング可能なタブとして表示されます。
 
-![NewCollection](images/NewCollection.png)
-![NewCollection](images/NewCollection_2.png)
+![NewCollection](../../en/SmartCollections/images/NewCollection.png)
+![NewCollection](../../en/SmartCollections/images/NewCollection_2.png)
 
 ### コレクションの作成
 
@@ -58,7 +58,7 @@ SmartCollections は、コンテンツブラウザにスマートなファイル
 2. 新しいコレクションの名前を入力します。
 3. プロジェクトのコンテンツフォルダ内に `.smc` ファイルが作成されます。
 
-![AddSmartCollection](images/AddSmartCollection.png)
+![AddSmartCollection](../../en/SmartCollections/images/AddSmartCollection.png)
 
 ### コレクションへのアセット追加
 
@@ -100,11 +100,11 @@ unreal.SmartCollectionsLibrary.add_asset_to_collection("/Game/MyAsset", "MyColle
 以下の手順でパネルを開きます：  
 **Tools → Kachipochi → Collections Sync**
 
-![Collection Sync Menu Image](images/CollectionSyncMenu.png)
+![Collection Sync Menu Image](../../en/SmartCollections/images/CollectionSyncMenu.png)
 
 #### Pull または Push を実行
 
-![CollectionSyncWindow](images/CollectionSyncWindow.png)
+![CollectionSyncWindow](../../en/SmartCollections/images/CollectionSyncWindow.png)
 
 **Pull（UE コレクション → Smart Collections）**  
 UE の組み込みコレクションを Smart Collections にインポートします。同名の Smart Collection が存在する場合はアセットが追記され、存在しない場合は新しいものが作成されます。UE の親子階層も再現されますが、既存の Smart Collection に設定済みの親は上書きされません。追記のみ行うため既存エントリは失われず、変更がない場合は「既に最新」としてスキップされるため、繰り返し実行しても安全です。
